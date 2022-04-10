@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01-csv_imports
+      author: Tebogo
+      changes:
+
+        - createTable:
+            tableName: csv_imports
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: firstname
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: surname
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: id_number
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+        - addAutoIncrement:
+            tableName: csv_imports
+            columnName: id
+            columnDataType: BIGINT
+            startWith: 1
+            incrementBy: 1
